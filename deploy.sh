@@ -31,5 +31,5 @@ do
 
     ssh -i "${ID_KEY}" "${host}" "cd '${DEST_DIR}' && ( which bundle || gem install bundle) && bundle"
     ssh -i "${ID_KEY}" "${host}" "cd '${DEST_DIR}' && chmod g+rw -R ."
-    ssh -i "${ID_KEY}" "${host}" "cd 'sudo service httpd restart"
+    ssh -i "${ID_KEY}" "${host}" -t "sudo service httpd restart"
 done
