@@ -24,7 +24,10 @@ set -eux
 
 for host in $DEST_HOSTS
 do
-    rsync -avz --exclude=".git" \
+    rsync -avz \
+        --exclude=".git" \
+        --exclude="*~" \
+        --exclude="*.db" \
         --rsh "ssh -i ${ID_KEY}" \
         "${BASE_DIR}" \
         "${host}:"
